@@ -17,7 +17,7 @@
 python podcast.py --title "Introducing Podcast Video Generator" --content "..."
 ```
 
-https://github.com/sujmao/podcast-video-generator/blob/main/demo_podcast.mp4
+[![Demo 演示](demo_thumbnail.png)](https://github.com/sujmao/podcast-video-generator/blob/main/demo_podcast.mp4)
 
 ---
 
