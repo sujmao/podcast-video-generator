@@ -17,7 +17,7 @@
 python podcast.py --title "Introducing Podcast Video Generator" --content "..."
 ```
 
-<video src="demo_podcast.mp4" controls width="640"></video>
+https://github.com/sujmao/podcast-video-generator/blob/main/demo_podcast.mp4
 
 ---
 
@@ -35,7 +35,7 @@ python podcast.py --title "Introducing Podcast Video Generator" --content "..."
 ## 安裝
 
 ```bash
-git clone https://github.com/your-username/podcast-video-generator.git
+git clone https://github.com/sujmao/podcast-video-generator.git
 cd podcast-video-generator
 pip install -r requirements.txt
 ```
@@ -47,16 +47,22 @@ pip install -r requirements.txt
 ## 使用方法
 
 ```bash
-# 基本用法
-python podcast.py --title "我的播客" --content "在這裡輸入內容文字..."
+# 單語言 — 純英文
+python podcast.py --title "Morning Briefing" \
+    --en-model en_US-lessac-medium \
+    --content "Today we will discuss the latest developments..."
+
+# 單語言 — 純中文
+python podcast.py --title "今日新聞" \
+    --cjk-model zh_CN-huayan-medium \
+    --content "今天我們來聊聊人工智慧的最新進展..."
+
+# 中英混輸（自動分段）
+python podcast.py --title "AI 專題報導" \
+    --content "今天我們來談談 GPT-4o 的 new features..."
 
 # 從文字檔案讀取
 python podcast.py --title "讀書心得" --content-file script.txt -o review.mp4
-
-# 自訂語音模型
-python podcast.py --title "每日新聞" --content "..." \
-    --cjk-model zh_CN-huayan-medium \
-    --en-model en_GB-alan-low
 
 # 調整語速
 python podcast.py --title "新聞摘要" --content "..." --speed 1.2

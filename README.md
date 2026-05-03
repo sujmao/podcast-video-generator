@@ -17,7 +17,7 @@ Built on [Piper TTS](https://github.com/rhasspy/piper) and [ffmpeg](https://ffmp
 python podcast.py --title "Introducing Podcast Video Generator" --content "..."
 ```
 
-<video src="demo_podcast.mp4" controls width="640"></video>
+https://github.com/sujmao/podcast-video-generator/blob/main/demo_podcast.mp4
 
 ---
 
@@ -35,7 +35,7 @@ python podcast.py --title "Introducing Podcast Video Generator" --content "..."
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/podcast-video-generator.git
+git clone https://github.com/sujmao/podcast-video-generator.git
 cd podcast-video-generator
 pip install -r requirements.txt
 ```
@@ -47,16 +47,22 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-# Basic
-python podcast.py --title "My Podcast" --content "Your text here..."
+# Single language — English only
+python podcast.py --title "Morning Briefing" \
+    --en-model en_US-lessac-medium \
+    --content "Today we will discuss the latest developments..."
+
+# Single language — Chinese only
+python podcast.py --title "今日新聞" \
+    --cjk-model zh_CN-huayan-medium \
+    --content "今天我們來聊聊人工智慧的最新進展..."
+
+# Mixed Chinese-English (auto-segmented)
+python podcast.py --title "AI 專題報導" \
+    --content "今天我們來談談 GPT-4o 的 new features..."
 
 # From a text file
 python podcast.py --title "Book Review" --content-file script.txt -o review.mp4
-
-# Custom models
-python podcast.py --title "Daily News" --content "..." \
-    --cjk-model zh_CN-huayan-medium \
-    --en-model en_GB-alan-low
 
 # Adjust speed
 python podcast.py --title "News Summary" --content "..." --speed 1.2
