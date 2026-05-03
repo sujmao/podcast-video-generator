@@ -17,7 +17,7 @@ Built on [Piper TTS](https://github.com/rhasspy/piper) and [ffmpeg](https://ffmp
 python podcast.py --title "Introducing Podcast Video Generator" --content "..."
 ```
 
-[![Demo Video](demo_thumbnail.png)](https://github.com/sujmao/podcast-video-generator/blob/main/demo_podcast.mp4)
+[![Demo Video](demo_thumbnail.png)](https://raw.githubusercontent.com/sujmao/podcast-video-generator/main/demo_podcast.mp4)
 
 ---
 
