@@ -299,10 +299,21 @@ Examples:
     print(f"  Output:  {output_path}")
     print()
 
-    # Step 1 — download models
+    # Step 1 — detect languages and download only needed models
     print("[1/3] Ensuring models are available...")
-    ensure_model(args.cjk_model)
-    ensure_model(args.en_model)
+    segments = split_mixed_text(content)
+    has_cjk = any(st == "cjk" for st, _ in segments)
+    has_latin = any(st == "latin" for st, _ in segments)
+
+    if has_cjk:
+        ensure_model(args.cjk_model)
+    else:
+        print(f"  No CJK text detected, skipping {args.cjk_model}")
+
+    if has_latin:
+        ensure_model(args.en_model)
+    else:
+        print(f"  No Latin text detected, skipping {args.en_model}")
     print()
 
     # Step 2 — TTS synthesis
